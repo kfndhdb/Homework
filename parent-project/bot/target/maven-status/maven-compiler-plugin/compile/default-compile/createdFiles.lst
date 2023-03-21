@@ -1,1 +1,5 @@
+app\BotApplication.class
+META-INF\spring.components
+bot\configuration\RecordBot.class
+META-INF\spring-configuration-metadata.json
 com\baeldung\App.class
