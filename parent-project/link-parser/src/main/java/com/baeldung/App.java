@@ -12,7 +12,7 @@ public class App
     {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите ссылку: ");
+        System.out.println("ВведиNT ссылку: ");
         String URL = sc.nextLine();
         BLParser linkParser = new BLParser(URL);
         System.out.println(linkParser.getData());
