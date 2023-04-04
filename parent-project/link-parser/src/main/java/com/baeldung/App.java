@@ -1,5 +1,5 @@
 package com.baeldung;
-
+import java.net.URISyntaxException;
 import java.util.Scanner;
 
 /**
@@ -8,13 +8,13 @@ import java.util.Scanner;
  */
 public class App
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws URISyntaxException
     {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("ВведиNT ссылку: ");
+        System.out.println("Введите ссылку: ");
         String URL = sc.nextLine();
         BLParser linkParser = new BLParser(URL);
-        System.out.println(linkParser.getData());
+        System.out.println(linkParser.getData().toString());
     }
 }
