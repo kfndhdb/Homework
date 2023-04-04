@@ -1,8 +1,6 @@
 package Client;
 
-import dto_classes.SOResponse;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import dtocl.SOResponse;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -12,7 +10,7 @@ public class SO {
     private WebClient webClient;
     private String URL;
 
-    public SOClient(String customURL){
+    public SO(String customURL){
         URL = customURL;
         webClient = WebClient.builder()
                 .baseUrl(URL)
@@ -20,7 +18,7 @@ public class SO {
                 .build();
     }
 
-    public SOClient(){
+    public SO(){
         URL = STACK_OVERFLOW_BASE_URL;
         webClient = WebClient.builder()
                 .baseUrl(URL)
