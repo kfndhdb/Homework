@@ -24,7 +24,7 @@ public class LinksController {
         return new AddLink(new URI("add"));
     }
     @DeleteMapping
-    RemoveLink deletLink(@RequestHeader int id) throws URISyntaxException {
+    RemoveLink deleteLink(@RequestHeader int id) throws URISyntaxException {
         return new RemoveLink(new URI("delete"));
     }
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
