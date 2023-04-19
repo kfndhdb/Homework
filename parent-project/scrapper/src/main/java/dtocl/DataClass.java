@@ -1,12 +1,14 @@
-package dto;
+package dtocl;
+
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.springframework.validation.annotation.Validated;
+
 @Validated
 @Data
-public class DataC {
-    public DataC(@NotNull int id, @NotNull String url, @NotNull String description, @NotNull int[] tgChatIds){
+public class DataClass {
+    public DataClass(@NotNull int id, @NotNull String url, @NotNull String description, @NotNull int[] tgChatIds){
         this.id = id;
         this.url = url;
         this.description = description;
@@ -37,5 +39,3 @@ public class DataC {
         return tgChatIds;
     }
 }
-
-
