@@ -18,7 +18,7 @@ public class jdbcLink {
     public void updateLink(JdbcTemplate template, long id, Timestamp newTimestamp){
         template.update("UPDATE links SET datetimestamp = ? WHERE id = ?", newTimestamp, id);
     }
-    public List<Link> getAllLinks(JdbcTemplate template, long chat_id){
+    public List<Link> getAllLinks(JdbcTemplate template){
         return template.query("SELECT * FROM links WHERE chat_id = "+chat_id, (rs, rowNum) -> {
             Link link = new Link();
             link.setId(rs.getLong("id"));
