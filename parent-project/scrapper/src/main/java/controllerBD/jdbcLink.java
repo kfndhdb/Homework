@@ -19,7 +19,7 @@ public class jdbcLink {
         template.update("UPDATE links SET datetimestamp = ? WHERE id = ?", newTimestamp, id);
     }
     public List<Link> getAllLinks(JdbcTemplate template){
-        return template.query("SELECT * FROM links WHERE chat_id = "+chat_id, (rs, rowNum) -> {
+        return template.query("SELECT * FROM links", (rs, rowNum) -> {
             Link link = new Link();
             link.setId(rs.getLong("id"));
             link.setChat_id(rs.getLong("chat_id"));
