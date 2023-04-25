@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,6 +35,7 @@ public class LinkDao implements Dao<Link>{
         link.setId(Objects.requireNonNull(Long.parseLong(params[0]), "Id cannot be null"));
         link.setChat_id(Objects.requireNonNull(Long.parseLong(params[1]), "Chat_id cannot be null"));
         link.setLink_url(Objects.requireNonNull(params[2], "Link cannot be null"));
+        link.setDatetimestamp(Objects.requireNonNull(Timestamp.valueOf(params[3]), "Link cannot be null"));
         executeInsideTransaction(entityManager -> entityManager.merge(link));
     }
 
