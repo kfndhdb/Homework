@@ -1,15 +1,18 @@
 package dao;
 
-
 import Entity.Chat;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Query;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
+
+
+@Service
 public class ChatDao implements Dao<Chat>{
     private EntityManager entityManager;
 

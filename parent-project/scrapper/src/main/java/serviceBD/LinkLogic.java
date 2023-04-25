@@ -11,6 +11,7 @@ public class LinkLogic {
     @Autowired
     private LinkR linkRepository;
     public Page<Link> getLinks(){
+
         return linkRepository.findAll();
     }
 }
