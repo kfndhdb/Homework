@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "type": "bot.configuration.RecordBot",
+      "sourceType": "bot.configuration.RecordBot"
+    },
+    {
+      "name": "app",
+      "type": "configuration.ApplicationConfig",
+      "sourceType": "configuration.ApplicationConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.test",
+      "type": "java.lang.String",
+      "sourceType": "bot.configuration.RecordBot"
+    },
+    {
+      "name": "app.test",
+      "type": "java.lang.String",
+      "sourceType": "configuration.ApplicationConfig"
+    }
+  ],
+  "hints": []
+}
