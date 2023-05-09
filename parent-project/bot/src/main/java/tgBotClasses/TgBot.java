@@ -5,9 +5,10 @@ import com.pengrad.telegrambot.model.BotCommand;
 import com.pengrad.telegrambot.request.SetMyCommands;
 
 public class TgBot {
+    private TgBotMethods tgBotMethods;
     TelegramBot bot = new TelegramBot("6228063170:AAEEagP7ZAvEG44Bwb-j0LdQBRVPVeSXNsM");
     public void startBot(){
-        TgBotMethods tgBotMethods = new TgBotMethods();
+        tgBotMethods  = new TgBotMethods();
         tgBotMethods.setBot(bot);
         tgBotMethods.setUpdateListener();
 
@@ -17,6 +18,9 @@ public class TgBot {
                 new BotCommand("list", "Показать список отслеживаемых ссылок")};
         bot.execute(new SetMyCommands(botCommands));
 
+    }
+    public TgBotMethods getTgBotMethods(){
+        return this.tgBotMethods;
     }
 }
 

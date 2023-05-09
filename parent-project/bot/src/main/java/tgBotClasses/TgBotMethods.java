@@ -4,7 +4,6 @@ import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
-
 import java.util.List;
 
 public class TgBotMethods {
@@ -21,7 +20,8 @@ public class TgBotMethods {
                                 return;
                             }
                             String msg = update.message().text();
-                            System.out.println(msg);
+                            long id = update.message().chat().id();
+                            System.out.println(id);
                             doAction(msg, update);
                         }
                 );
@@ -39,6 +39,9 @@ public class TgBotMethods {
     private void doAction(String msg, Update update){
         bot.execute(new SendMessage(update.message().chat().id(), getResponse(msg)));
 
+    }
+    public void sendMessage(long chatId, String msg){
+        bot.execute(new SendMessage(chatId, msg));
     }
     public String getResponse(String  msg){
         String helpMsg = "/help - вывести окно с командами\n" +

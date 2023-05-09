@@ -21,13 +21,11 @@ public class ScrapperDataBaseController {
     @GetMapping("/chats")
     @ResponseBody
     public Page<Chat> chats(){
-
         return chatLogic.getChats();
     }
     @GetMapping("/links")
     @ResponseBody
     public Page<Link> links(){
-
         return linkLogic.getLinks();
     }
 
