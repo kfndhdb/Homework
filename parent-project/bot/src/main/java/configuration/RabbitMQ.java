@@ -6,15 +6,17 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.amqp.support.converter.ClassMapper;
 import org.springframework.amqp.support.converter.DefaultClassMapper;
 import java.util.HashMap;
 import java.util.Map;
+@Configuration
 public record RabbitMQ() {
-    publicstaticfinal String QUEUE_MESSAGES = "messages-queue";
-    publicstaticfinal String EXCHANGE_MESSAGES = "messages-exchange";
-    publicstaticfinal String QUEUE_MESSAGES_DLQ = "messages-dlq";
+     public static final String QUEUE_MESSAGES = "messages-queue";
+    public static final String EXCHANGE_MESSAGES = "messages-exchange";
+    public static final String QUEUE_MESSAGES_DLQ = "messages-dlq";
     @Bean
     Queue messagesQueue() {
         return QueueBuilder.durable(QUEUE_MESSAGES)
@@ -41,12 +43,12 @@ public record RabbitMQ() {
     }
     public ClassMapper classMapper(){
         Map<String, Class<?>> mappings = new HashMap<>();
-        mappings.put("dto_classes.DataClass", DataClass.class);
+        mappings.put("dto_classes.DataClass", DataC.class);
 
         DefaultClassMapper classMapper = new DefaultClassMapper();
         classMapper.setTrustedPackages("dto_classes.*");
         classMapper.setIdClassMapping(mappings);
-        returnclassMapper;
+        return classMapper;
     }
     @Bean
     public MessageConverter jsonMessageConverter(ClassMapper classMapper) {
