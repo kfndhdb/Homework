@@ -1,0 +1,7 @@
+Services.ScrapperQueueProducer=org.springframework.stereotype.Component
+app.BotApplication=org.springframework.stereotype.Component,org.springframework.boot.SpringBootConfiguration
+app.BotController=org.springframework.stereotype.Component
+bot.configuration.RecordBot=org.springframework.boot.context.properties.ConfigurationProperties
+configuration.ApplicationConfig=org.springframework.boot.context.properties.ConfigurationProperties
+configuration.RabbitMQ=org.springframework.stereotype.Component
+configuration.TgBotConfig=org.springframework.stereotype.Component
