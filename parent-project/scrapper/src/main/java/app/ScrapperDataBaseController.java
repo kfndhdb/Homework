@@ -2,7 +2,6 @@ package app;
 
 import Entity.Chat;
 import Entity.Link;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +13,9 @@ import serviceBD.LinkLogic;
 @RestController
 @RequestMapping("/scrapper")
 public class ScrapperDataBaseController {
-    @Autowired
+
     ChatLogic chatLogic;
-    @Autowired
+
     LinkLogic linkLogic;
     @GetMapping("/chats")
     @ResponseBody

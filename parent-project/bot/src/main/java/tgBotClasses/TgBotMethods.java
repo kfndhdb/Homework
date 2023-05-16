@@ -5,11 +5,12 @@ import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
 import java.util.List;
-
+import io.micrometer.core.instrument.Metrics;
+import io.micrometer.core.instrument.Counter;
 public class TgBotMethods {
     private TelegramBot bot;
     private boolean hasList = true;
-
+    Counter messagesCounter = Metrics.counter("processed_messages", "application", "bot");
 
     public void setUpdateListener(){
         this.bot.setUpdatesListener(new UpdatesListener() {
@@ -23,6 +24,7 @@ public class TgBotMethods {
                             long id = update.message().chat().id();
                             System.out.println(id);
                             doAction(msg, update);
+                    messagesCounter.increment();
                         }
                 );
 
