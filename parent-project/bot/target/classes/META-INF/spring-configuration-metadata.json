@@ -21,6 +21,12 @@
       "name": "app.test",
       "type": "java.lang.String",
       "sourceType": "configuration.ApplicationConfig"
+    },
+    {
+      "name": "app.use-queue",
+      "type": "java.lang.Boolean",
+      "sourceType": "configuration.ApplicationConfig",
+      "defaultValue": false
     }
   ],
   "hints": []

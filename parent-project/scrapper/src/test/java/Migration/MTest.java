@@ -1,8 +1,9 @@
 package Migration;
 
-
 import integration.Environment;
 import org.junit.jupiter.api.Test;
+
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,10 +11,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-public class test extends Environment {
+
+public class MTest extends Environment {
     @Test
     void checkMigrations_link_open(){
-        String SQL_REQUEST_FROM_LINK = """ 
+        String SQL_REQUEST_FROM_LINK = """
                 SElECT * FROM links
                 """;
 
@@ -30,9 +32,8 @@ public class test extends Environment {
 
     }
 
-    @Test
-    void checkMigrations_chat_open(){
-        String SQL_REQUEST_FROM_CHAT = """ 
+    @Test public void checkMigrations_chat_open(){
+        String SQL_REQUEST_FROM_CHAT = """
                 SElECT * FROM chats
                 """;
 
